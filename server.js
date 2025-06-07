@@ -15,8 +15,10 @@ app.use(cors());
 async function fetchPageAndCss(url) {
   const browser = await puppeteer.launch({
     headless: 'new',
-    args: ['--no-sandbox', '--disable-setuid-sandbox'] // ✅ Render 必须有这个
+    executablePath: '/opt/render/.cache/puppeteer/chrome/linux-137.0.7151.55/chrome-linux64/chrome',
+    args: ['--no-sandbox', '--disable-setuid-sandbox']
   });
+
 
   const page = await browser.newPage();
   await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 20000 });
