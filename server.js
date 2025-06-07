@@ -14,10 +14,10 @@ app.use(cors());
 // 主抓取函数
 async function fetchPageAndCss(url) {
   const browser = await puppeteer.launch({
-    headless: 'new',
-    executablePath: puppeteer.executablePath(),
-    args: ['--no-sandbox', '--disable-setuid-sandbox']
-  });
+      headless: 'new',
+      executablePath: puppeteer.executablePath(),
+      args: ['--no-sandbox', '--disable-setuid-sandbox']
+    });
 
 
   const page = await browser.newPage();
