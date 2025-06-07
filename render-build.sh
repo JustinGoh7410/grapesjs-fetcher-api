@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
-echo "Installing Chromium for Puppeteer..."
-npx puppeteer browsers install chrome
+echo "Installing Puppeteer Chromium..."
+npx puppeteer browsers install chrome || exit 1
